@@ -22,6 +22,7 @@ if (isset($_GET['id'])) {
 <head>
     <title>Manajemen Donasi Barang</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -29,7 +30,7 @@ if (isset($_GET['id'])) {
     </nav>
     <div class="container my-3">
         <h4 class="my-3">Manajemen Donasi Barang</h4>
-        <table class="table table-bordered">
+        <table class="table table-bordered table-hover">
             <thead class="thead-dark">
                 <tr>
                     <th>No</th>
@@ -58,7 +59,7 @@ if (isset($_GET['id'])) {
                     <td><?php echo $data["jumlah"]; ?></td>
                     <td>
                         <a href="update.php?id=<?php echo htmlspecialchars($data['id']); ?>" class="btn btn-warning" role="button">Update</a>
-                        <a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?id=<?php echo $data['id']; ?>" class="btn btn-danger" role="button">Delete</a>
+                        <a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?id=<?php echo $data['id']; ?>" class="btn btn-danger" role="button" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</a>
                     </td>
                 </tr>
             </tbody>
